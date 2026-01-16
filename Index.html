@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesotho Geospatial Dashboards Portal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      color: #333;
+    }
+    header {
+      background: #0b5ed7;
+      color: #fff;
+      padding: 1rem 1.5rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    .container {
+      display: flex;
+      height: calc(100vh - 70px);
+    }
+    nav {
+      width: 260px;
+      background: #ffffff;
+      border-right: 1px solid #ddd;
+      overflow-y: auto;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav li {
+      border-bottom: 1px solid #eee;
+    }
+    nav button {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    nav button:hover,
+    nav button.active {
+      background: #e9f0ff;
+      color: #0b5ed7;
+      font-weight: bold;
+    }
+    main {
+      flex: 1;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .dashboard-title {
+      padding: 0.75rem 1rem;
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+    }
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: #fff;
+    }
+    .placeholder {
+      padding: 2rem;
+      text-align: center;
+      color: #777;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 0.5rem;
+      background: #f1f1f1;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lesotho Geospatial Dashboards Portal</h1>
+  </header>
+
+  <div class="container">
+    <nav>
+      <ul>
+        <li><button data-title="Lesotho Land Cover Dashboard" data-url="https://www.landcoverstats.gov.ls">Lesotho Land Cover</button></li>
+        <li><button data-title="Lesotho Soil Information System" data-url="https://www.lesis.gov.ls">Soil Information System</button></li>
+        <li><button data-title="Lesotho Rangeland Health Dashboard" data-url="https://dashboards.icraf.org/app/lesotho_rangeland_health_dashboard">Rangeland Health</button></li>
+        <li><button data-title="ROLL Field Dashboard" data-url="https://roll-project-ff0bb.web.app/">ROLL Field Dashboard</button></li>
+        <li><button data-title="Birds App – Lesotho Avifauna" data-url="https://tsmafantiri.shinyapps.io/LsoAvifaunaApp/">Birds App</button></li>
+        <li><button data-title="Pollution Monitor – Lesotho Emissions Monitoring App" data-url="">Pollution Monitor</button></li>
+        <li><button data-title="Fire Monitor – Fire Activity in and around Lesotho" data-url="">Fire Monitor</button></li>
+        <li><button data-title="Rangeland Species Searcher – Lesotho Environmental Indicators App" data-url="">Rangeland Species Searcher</button></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="dashboard-title" id="dashboardTitle">Select a dashboard from the menu</div>
+      <div id="contentArea" class="placeholder">
+        Please select a dashboard from the left menu to load it here.
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    © 2026 Lesotho Geospatial Dashboards | Built with HTML, CSS & JavaScript
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('nav button');
+    const title = document.getElementById('dashboardTitle');
+    const contentArea = document.getElementById('contentArea');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const url = btn.getAttribute('data-url');
+        const text = btn.getAttribute('data-title');
+
+        title.textContent = text;
+
+        if (url && url.trim() !== "") {
+          contentArea.innerHTML = `<iframe src="${url}" title="${text}"></iframe>`;
+        } else {
+          contentArea.innerHTML = `<div class="placeholder">This dashboard will be embedded once the URL is available.</div>`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

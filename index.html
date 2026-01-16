@@ -88,19 +88,42 @@
 <body>
   <header>
     <h1>Lesotho Geospatial Dashboards Portal</h1>
+    <p style="margin:0.4rem 0 0;font-size:0.9rem;opacity:0.9;">A centralized access point for national land, soil, biodiversity, and climate information systems</p>
   </header>
 
   <div class="container">
+
+  <!-- Landing description -->
+  <section style="padding:1rem 1.5rem;background:#ffffff;border-bottom:1px solid #ddd;">
+    <h2 style="margin-top:0;">Welcome</h2>
+    <p style="max-width:900px;">
+      This portal provides unified access to key geospatial dashboards supporting land management,
+      soil assessment, biodiversity monitoring, and climate-related decision-making in the Kingdom of Lesotho.
+      The dashboards are developed by national institutions and partners and open in separate tabs for
+      full functionality and performance.
+    </p>
+    <p style="max-width:900px;">
+      Use the thematic menu on the left to explore available tools. Additional dashboards will be added
+      as they become available.
+    </p>
+  </section>
     <nav>
       <ul>
-        <li><button data-title="Lesotho Land Cover Dashboard" data-url="https://www.landcoverstats.gov.ls">Lesotho Land Cover</button></li>
-        <li><button data-title="Lesotho Soil Information System" data-url="https://www.lesis.gov.ls">Soil Information System</button></li>
-        <li><button data-title="Lesotho Rangeland Health Dashboard" data-url="https://dashboards.icraf.org/app/lesotho_rangeland_health_dashboard">Rangeland Health</button></li>
-        <li><button data-title="ROLL Field Dashboard" data-url="https://roll-project-ff0bb.web.app/">ROLL Field Dashboard</button></li>
-        <li><button data-title="Birds App – Lesotho Avifauna" data-url="https://tsmafantiri.shinyapps.io/LsoAvifaunaApp/">Birds App</button></li>
-        <li><button data-title="Pollution Monitor – Lesotho Emissions Monitoring App" data-url="">Pollution Monitor</button></li>
-        <li><button data-title="Fire Monitor – Fire Activity in and around Lesotho" data-url="">Fire Monitor</button></li>
-        <li><button data-title="Rangeland Species Searcher – Lesotho Environmental Indicators App" data-url="">Rangeland Species Searcher</button></li>
+        <li style="padding:0.6rem 1rem;font-weight:bold;background:#f0f3f7;">LAND</li>
+        <li><a href="https://www.landcoverstats.gov.ls" target="_blank">Lesotho Land Cover Dashboard</a></li>
+        <li><a href="https://roll-project-ff0bb.web.app/" target="_blank">ROLL Field Dashboard</a></li>
+
+        <li style="padding:0.6rem 1rem;font-weight:bold;background:#f0f3f7;">SOIL</li>
+        <li><a href="https://www.lesis.gov.ls" target="_blank">Lesotho Soil Information System</a></li>
+
+        <li style="padding:0.6rem 1rem;font-weight:bold;background:#f0f3f7;">BIODIVERSITY</li>
+        <li><a href="https://dashboards.icraf.org/app/lesotho_rangeland_health_dashboard" target="_blank">Rangeland Health Dashboard</a></li>
+        <li><a href="https://tsmafantiri.shinyapps.io/LsoAvifaunaApp/" target="_blank">Birds App – Lesotho Avifauna</a></li>
+        <li><a href="#" onclick="alert('URL not yet available'); return false;">Rangeland Species Searcher</a></li>
+
+        <li style="padding:0.6rem 1rem;font-weight:bold;background:#f0f3f7;">CLIMATE & ENVIRONMENT</li>
+        <li><a href="#" onclick="alert('URL not yet available'); return false;">Pollution Monitor – Emissions</a></li>
+        <li><a href="#" onclick="alert('URL not yet available'); return false;">Fire Monitor – Fire Activity</a></li>
       </ul>
     </nav>
 

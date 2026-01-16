@@ -4,199 +4,242 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesotho Geospatial Dashboards Portal</title>
+
   <style>
+    :root {
+      --primary: #0b5ed7;
+      --primary-dark: #084298;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --border: #e5e7eb;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --accent: #eef2ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg, #eef3f9, #f8fafc);
-      color: #1f2937;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-main);
     }
+
+    /* ================= HEADER ================= */
     header {
-      background: linear-gradient(135deg, #0b5ed7, #084298);
-      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
       padding: 1.5rem 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
+
     header h1 {
       margin: 0;
       font-size: 1.6rem;
-      letter-spacing: 0.3px;
+      font-weight: 600;
     }
+
     header p {
       margin-top: 0.4rem;
       font-size: 0.95rem;
-      opacity: 0.95;
+      opacity: 0.9;
+      max-width: 900px;
     }
+
+    /* ================= LAYOUT ================= */
     .container {
       display: flex;
-      height: calc(100vh - 100px);
+      min-height: calc(100vh - 110px);
     }
-    nav {
+
+    /* ================= SIDEBAR ================= */
+    aside {
       width: 280px;
-      background: #ffffff;
-      border-right: 1px solid #e5e7eb;
+      background: var(--bg-white);
+      border-right: 1px solid var(--border);
       overflow-y: auto;
-      box-shadow: 2px 0 8px rgba(0,0,0,0.05);
     }
+
     nav ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
+
     nav li.section {
-      padding: 0.75rem 1rem;
+      padding: 0.75rem 1.2rem;
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.08em;
-      color: #6b7280;
-      background: #4ed81d;
+      color: var(--text-muted);
+      background: #f3f4f6;
     }
+
     nav a {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
       padding: 0.8rem 1.2rem;
       text-decoration: none;
-      color: #1f2937;
+      color: var(--text-main);
       font-size: 0.95rem;
-      transition: all 0.2s ease;
+      transition: background 0.2s ease, color 0.2s ease;
     }
+
     nav a:hover {
-      background: #eef2ff;
-      color: #1d4ed8;
-      padding-left: 1.5rem;
+      background: var(--accent);
+      color: var(--primary);
     }
+
+    /* ================= MAIN CONTENT ================= */
     main {
       flex: 1;
-      padding: 1.5rem;
-      overflow-y: auto;
+      padding: 2rem;
     }
+
     .card {
-      background: #ffffff;
+      background: var(--bg-white);
       border-radius: 14px;
-      padding: 1.8rem;
+      padding: 2rem;
       max-width: 960px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
     }
+
     .card h2 {
       margin-top: 0;
       font-size: 1.4rem;
-      color: #0b5ed7;
+      color: var(--primary);
     }
+
     .card p {
-      line-height: 1.6;
+      line-height: 1.7;
       font-size: 0.95rem;
       color: #374151;
+      max-width: 900px;
     }
+
     .hint {
-      margin-top: 1.2rem;
-      padding: 1rem;
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
       background: #f0f9ff;
-      border-left: 4px solid #0b5ed7;
+      border-left: 4px solid var(--primary);
       border-radius: 6px;
       font-size: 0.9rem;
     }
+
+    /* ================= FOOTER ================= */
     footer {
-      text-align: center;
-      font-size: 0.8rem;
-      padding: 0.6rem;
       background: #f3f4f6;
-      border-top: 1px solid #e5e7eb;
-      color: #6b7280;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer .social-media {
+      margin-top: 0.4rem;
+    }
+
+    footer a {
+      margin: 0 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      aside {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Lesotho Geospatial Dashboards Portal</h1>
-    <p style="margin:0.4rem 0 0;font-size:0.9rem;opacity:0.9;">A centralized access point for national land, soil, biodiversity, and climate information systems</p>
-  </header>
 
-  <div class="container">
+<!-- ================= HEADER ================= -->
+<header>
+  <h1>Lesotho Geospatial Dashboards Portal</h1>
+  <p>
+    A centralized access point for national land, soil, biodiversity,
+    and climate information systems supporting evidence-based decision-making
+    in the Kingdom of Lesotho.
+  </p>
+</header>
 
-  <!-- Landing description -->
-  <section style="padding:1rem 1.5rem;background:#ffffff;border-bottom:1px solid #ddd;">
-    <h2 style="margin-top:0;">Welcome</h2>
-    <p style="max-width:900px;">
-      This portal provides unified access to key geospatial dashboards supporting land management,
-      soil assessment, biodiversity monitoring, and climate-related decision-making in the Kingdom of Lesotho.
-      The dashboards are developed by national institutions and partners and open in separate tabs for
-      full functionality and performance.
-    </p>
-    <p style="max-width:900px;">
-      Use the thematic menu on the right to explore available tools. Additional dashboards will be added
-      as they become available.
-    </p>
-  </section>
+<!-- ================= MAIN LAYOUT ================= -->
+<div class="container">
+
+  <!-- LEFT MENU -->
+  <aside>
     <nav>
       <ul>
         <li class="section">LAND</li>
-        <li><a href="https://www.landcoverstats.gov.ls" target="_blank">🗺️ Lesotho Land Cover Dashboard</a></li>
+        <li><a href="https://www.landcoverstats.gov.ls" target="_blank">🗺️ Land Cover Dashboard</a></li>
         <li><a href="https://roll-project-ff0bb.web.app/" target="_blank">📍 ROLL Field Dashboard</a></li>
 
         <li class="section">SOIL</li>
-        <li><a href="https://www.lesis.gov.ls" target="_blank">🌱 Lesotho Soil Information System</a></li>
+        <li><a href="https://www.lesis.gov.ls" target="_blank">🌱 Soil Information System</a></li>
 
         <li class="section">BIODIVERSITY</li>
-        <li><a href="https://dashboards.icraf.org/app/lesotho_rangeland_health_dashboard" target="_blank">🌾 Rangeland Health Dashboard</a></li>
-        <li><a href="https://tsmafantiri.shinyapps.io/LsoAvifaunaApp/" target="_blank">🐦 Birds App – Lesotho Avifauna</a></li>
-        <li><a href="https://tsmafantiri.shinyapps.io/LSOEnviroApp/" target="_blank">🦌 Rangeland Species Searcher</a></li>
+        <li><a href="https://dashboards.icraf.org/app/lesotho_rangeland_health_dashboard" target="_blank">🌾 Rangeland Health</a></li>
+        <li><a href="https://tsmafantiri.shinyapps.io/LsoAvifaunaApp/" target="_blank">🐦 Lesotho Avifauna</a></li>
+        <li><a href="https://tsmafantiri.shinyapps.io/LSOEnviroApp/" target="_blank">🦌 Species Searcher</a></li>
 
         <li class="section">CLIMATE & ENVIRONMENT</li>
-        <li><a href="https://nifty-vault-332121.projects.earthengine.app/view/lesotho-emmissions-monitoring-app" target="_blank">🏭 Pollution Monitor – Emissions</a></li>
-        <li><a href="https://africageoportal.maps.arcgis.com/apps/instant/charts/index.html?appid=b5348bb23f83414ca6cb74533df828c6" target="_blank">🔥 Fire Monitor – Fire Activity</a></li>
+        <li><a href="https://nifty-vault-332121.projects.earthengine.app/view/lesotho-emmissions-monitoring-app" target="_blank">🏭 Emissions Monitor</a></li>
+        <li><a href="https://africageoportal.maps.arcgis.com/apps/instant/charts/index.html?appid=b5348bb23f83414ca6cb74533df828c6" target="_blank">🔥 Fire Activity</a></li>
       </ul>
     </nav>
+  </aside>
 
-    <main>
-      <div class="card">
-        <h2>Welcome</h2>
-        <p>
-          This portal provides unified access to key geospatial dashboards supporting land management,
-          soil assessment, biodiversity monitoring, and climate-related decision-making in the Kingdom of Lesotho.
-          The dashboards are developed by national institutions and partners and open in separate tabs for
-          full functionality and performance.
-        </p>
-        <p>
-          Use the thematic menu on the left to explore available tools. Additional dashboards will be added
-          as they become available.
-        </p>
-        <div class="hint">
-          👉 Select a dashboard from the menu to open it in a new page.
-        </div>
+  <!-- RIGHT CONTENT -->
+  <main>
+    <div class="card">
+      <h2>Welcome</h2>
+      <p>
+        This portal provides unified access to key geospatial dashboards
+        supporting land management, soil assessment, biodiversity monitoring,
+        and climate-related analysis in Lesotho.
+      </p>
+
+      <p>
+        Dashboards are developed by national institutions and partners and
+        open in separate tabs to ensure full performance, stability,
+        and analytical depth.
+      </p>
+
+      <div class="hint">
+        👉 Select a dashboard from the menu on the left to open it in a new tab.
       </div>
-    </main>
-  </div>
-
-  <footer>
-    © 2026 Lesotho Geospatial Dashboards | Designed and Built by OCAES 
-   <div class="social-media">
-            <a href="https://www.facebook.com/Ocaes" target="_blank">Facebook</a>
-            <a href="https://x.com/ocaes_lso" target="_blank">X</a>
-            <a href="https://heylink.me/tsitsomafantiri/" target="_blank">HeyLink.me</a></p>
     </div>
-  </footer>
+  </main>
 
-  <script>
-    const buttons = document.querySelectorAll('nav button');
-    const title = document.getElementById('dashboardTitle');
-    const contentArea = document.getElementById('contentArea');
+</div>
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+<!-- ================= FOOTER ================= -->
+<footer>
+  © 2026 Lesotho Geospatial Dashboards | Designed & Built by OCAES
+  <div class="social-media">
+    <a href="https://www.facebook.com/Ocaes" target="_blank">Facebook</a>
+    <a href="https://x.com/ocaes_lso" target="_blank">X</a>
+    <a href="https://heylink.me/tsitsomafantiri/" target="_blank">HeyLink.me</a>
+  </div>
+</footer>
 
-        const url = btn.getAttribute('data-url');
-        const text = btn.getAttribute('data-title');
-
-        title.textContent = text;
-
-        if (url && url.trim() !== "") {
-          contentArea.innerHTML = `<iframe src="${url}" title="${text}"></iframe>`;
-        } else {
-          contentArea.innerHTML = `<div class="placeholder">This dashboard will be embedded once the URL is available.</div>`;
-        }
-      });
-    });
-  </script>
 </body>
 </html>

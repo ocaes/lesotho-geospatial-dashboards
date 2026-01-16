@@ -7,81 +7,100 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f6f8;
-      color: #333;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #eef3f9, #f8fafc);
+      color: #1f2937;
     }
     header {
-      background: #0b5ed7;
+      background: linear-gradient(135deg, #0b5ed7, #084298);
       color: #fff;
-      padding: 1rem 1.5rem;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
     header h1 {
       margin: 0;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
+      letter-spacing: 0.3px;
+    }
+    header p {
+      margin-top: 0.4rem;
+      font-size: 0.95rem;
+      opacity: 0.95;
     }
     .container {
       display: flex;
-      height: calc(100vh - 70px);
+      height: calc(100vh - 100px);
     }
     nav {
-      width: 260px;
+      width: 280px;
       background: #ffffff;
-      border-right: 1px solid #ddd;
+      border-right: 1px solid #e5e7eb;
       overflow-y: auto;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.05);
     }
     nav ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-    nav li {
-      border-bottom: 1px solid #eee;
+    nav li.section {
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      background: #f3f4f6;
     }
-    nav button {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      background: none;
-      border: none;
-      text-align: left;
+    nav a {
+      display: block;
+      padding: 0.8rem 1.2rem;
+      text-decoration: none;
+      color: #1f2937;
       font-size: 0.95rem;
-      cursor: pointer;
+      transition: all 0.2s ease;
     }
-    nav button:hover,
-    nav button.active {
-      background: #e9f0ff;
-      color: #0b5ed7;
-      font-weight: bold;
+    nav a:hover {
+      background: #eef2ff;
+      color: #1d4ed8;
+      padding-left: 1.5rem;
     }
     main {
       flex: 1;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
+      padding: 1.5rem;
+      overflow-y: auto;
     }
-    .dashboard-title {
-      padding: 0.75rem 1rem;
+    .card {
       background: #ffffff;
-      border-bottom: 1px solid #ddd;
-      font-weight: bold;
+      border-radius: 14px;
+      padding: 1.8rem;
+      max-width: 960px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
-    iframe {
-      flex: 1;
-      width: 100%;
-      border: none;
-      background: #fff;
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #0b5ed7;
     }
-    .placeholder {
-      padding: 2rem;
-      text-align: center;
-      color: #777;
+    .card p {
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+    .hint {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      background: #f0f9ff;
+      border-left: 4px solid #0b5ed7;
+      border-radius: 6px;
+      font-size: 0.9rem;
     }
     footer {
       text-align: center;
       font-size: 0.8rem;
-      padding: 0.5rem;
-      background: #f1f1f1;
-      border-top: 1px solid #ddd;
+      padding: 0.6rem;
+      background: #f3f4f6;
+      border-top: 1px solid #e5e7eb;
+      color: #6b7280;
     }
   </style>
 </head>
@@ -109,28 +128,40 @@
   </section>
     <nav>
       <ul>
-        <li style="padding:0.6rem 1rem;font-weight:bold;background:#f0f3f7;">LAND</li>
-        <li><a href="https://www.landcoverstats.gov.ls" target="_blank">Lesotho Land Cover Dashboard</a></li>
-        <li><a href="https://roll-project-ff0bb.web.app/" target="_blank">ROLL Field Dashboard</a></li>
+        <li class="section">LAND</li>
+        <li><a href="https://www.landcoverstats.gov.ls" target="_blank">🗺️ Lesotho Land Cover Dashboard</a></li>
+        <li><a href="https://roll-project-ff0bb.web.app/" target="_blank">📍 ROLL Field Dashboard</a></li>
 
-        <li style="padding:0.6rem 1rem;font-weight:bold;background:#f0f3f7;">SOIL</li>
-        <li><a href="https://www.lesis.gov.ls" target="_blank">Lesotho Soil Information System</a></li>
+        <li class="section">SOIL</li>
+        <li><a href="https://www.lesis.gov.ls" target="_blank">🌱 Lesotho Soil Information System</a></li>
 
-        <li style="padding:0.6rem 1rem;font-weight:bold;background:#f0f3f7;">BIODIVERSITY</li>
-        <li><a href="https://dashboards.icraf.org/app/lesotho_rangeland_health_dashboard" target="_blank">Rangeland Health Dashboard</a></li>
-        <li><a href="https://tsmafantiri.shinyapps.io/LsoAvifaunaApp/" target="_blank">Birds App – Lesotho Avifauna</a></li>
-        <li><a href="#" onclick="alert('URL not yet available'); return false;">Rangeland Species Searcher</a></li>
+        <li class="section">BIODIVERSITY</li>
+        <li><a href="https://dashboards.icraf.org/app/lesotho_rangeland_health_dashboard" target="_blank">🌾 Rangeland Health Dashboard</a></li>
+        <li><a href="https://tsmafantiri.shinyapps.io/LsoAvifaunaApp/" target="_blank">🐦 Birds App – Lesotho Avifauna</a></li>
+        <li><a href="#" onclick="alert('URL not yet available'); return false;">🦌 Rangeland Species Searcher</a></li>
 
-        <li style="padding:0.6rem 1rem;font-weight:bold;background:#f0f3f7;">CLIMATE & ENVIRONMENT</li>
-        <li><a href="#" onclick="alert('URL not yet available'); return false;">Pollution Monitor – Emissions</a></li>
-        <li><a href="#" onclick="alert('URL not yet available'); return false;">Fire Monitor – Fire Activity</a></li>
+        <li class="section">CLIMATE & ENVIRONMENT</li>
+        <li><a href="#" onclick="alert('URL not yet available'); return false;">🏭 Pollution Monitor – Emissions</a></li>
+        <li><a href="#" onclick="alert('URL not yet available'); return false;">🔥 Fire Monitor – Fire Activity</a></li>
       </ul>
     </nav>
 
     <main>
-      <div class="dashboard-title" id="dashboardTitle">Select a dashboard from the menu</div>
-      <div id="contentArea" class="placeholder">
-        Please select a dashboard from the left menu to load it here.
+      <div class="card">
+        <h2>Welcome</h2>
+        <p>
+          This portal provides unified access to key geospatial dashboards supporting land management,
+          soil assessment, biodiversity monitoring, and climate-related decision-making in the Kingdom of Lesotho.
+          The dashboards are developed by national institutions and partners and open in separate tabs for
+          full functionality and performance.
+        </p>
+        <p>
+          Use the thematic menu on the left to explore available tools. Additional dashboards will be added
+          as they become available.
+        </p>
+        <div class="hint">
+          👉 Select a dashboard from the menu to open it in a new page.
+        </div>
       </div>
     </main>
   </div>

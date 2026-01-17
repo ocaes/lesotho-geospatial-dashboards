@@ -39,7 +39,7 @@ Dashboards are organized thematically via a left-hand navigation panel.
 
 ### 🌍 Climate & Environment
 - **Emissions Monitor** – Atmospheric pollutants and air quality indicators  
-- **CMIP6 Climate Data Extractor** – Multi-variable climate projections for Metolong  
+- **CMIP6 Climate Data Extractor** – Multi-variable climate projections
 - **Fire Activity Dashboard** – Active fires and thermal activity analytics  
 
 Each dashboard opens in a **new browser tab** to preserve performance, stability, and full analytical functionality.

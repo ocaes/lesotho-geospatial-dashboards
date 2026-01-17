@@ -17,9 +17,7 @@
       --accent: #eef2ff;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -28,7 +26,6 @@
       color: var(--text-main);
     }
 
-    /* ================= HEADER ================= */
     header {
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #ffffff;
@@ -49,13 +46,11 @@
       max-width: 900px;
     }
 
-    /* ================= LAYOUT ================= */
     .container {
       display: flex;
       min-height: calc(100vh - 110px);
     }
 
-    /* ================= SIDEBAR ================= */
     aside {
       width: 280px;
       background: var(--bg-white);
@@ -94,7 +89,6 @@
       color: var(--primary);
     }
 
-    /* ================= MAIN CONTENT ================= */
     main {
       flex: 1;
       padding: 2rem;
@@ -130,7 +124,6 @@
       font-size: 0.9rem;
     }
 
-    /* ================= FOOTER ================= */
     footer {
       background: #f3f4f6;
       border-top: 1px solid var(--border);
@@ -140,26 +133,16 @@
       color: var(--text-muted);
     }
 
-    footer .social-media {
-      margin-top: 0.4rem;
-    }
-
     footer a {
       margin: 0 0.5rem;
       color: var(--primary);
       text-decoration: none;
     }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+    footer a:hover { text-decoration: underline; }
 
-    /* ================= RESPONSIVE ================= */
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-
+      .container { flex-direction: column; }
       aside {
         width: 100%;
         border-right: none;
@@ -171,7 +154,6 @@
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header>
   <h1>Lesotho Geospatial Dashboards Portal</h1>
   <p>
@@ -181,10 +163,8 @@
   </p>
 </header>
 
-<!-- ================= MAIN LAYOUT ================= -->
 <div class="container">
 
-  <!-- LEFT MENU -->
   <aside>
     <nav>
       <ul>
@@ -202,12 +182,12 @@
 
         <li class="section">CLIMATE & ENVIRONMENT</li>
         <li><a href="https://nifty-vault-332121.projects.earthengine.app/view/lesotho-emmissions-monitoring-app" target="_blank">🏭 Emissions Monitor</a></li>
+        <li><a href="https://nifty-vault-332121.projects.earthengine.app/view/cmip6-multi-variable-extractor-for-metolong" target="_blank">🌍 CMIP6 Climate Data Extractor</a></li>
         <li><a href="https://africageoportal.maps.arcgis.com/apps/instant/charts/index.html?appid=b5348bb23f83414ca6cb74533df828c6" target="_blank">🔥 Fire Activity</a></li>
       </ul>
     </nav>
   </aside>
 
-  <!-- RIGHT CONTENT -->
   <main>
     <div class="card">
       <h2>Welcome</h2>
@@ -231,7 +211,6 @@
 
 </div>
 
-<!-- ================= FOOTER ================= -->
 <footer>
   © 2026 Lesotho Geospatial Dashboards | Designed & Built by OCAES
   <div class="social-media">

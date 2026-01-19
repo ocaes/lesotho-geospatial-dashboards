@@ -52,7 +52,7 @@
     }
 
     aside {
-      width: 280px;
+      width: 300px;
       background: var(--bg-white);
       border-right: 1px solid var(--border);
       overflow-y: auto;
@@ -73,20 +73,46 @@
       background: #4ed81d;
     }
 
-    nav a {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.8rem 1.2rem;
-      text-decoration: none;
-      color: var(--text-main);
-      font-size: 0.95rem;
-      transition: background 0.2s ease, color 0.2s ease;
+    /* Dashboard dropdowns */
+    details.dashboard {
+      border-bottom: 1px solid var(--border);
     }
 
-    nav a:hover {
+    details.dashboard summary {
+      padding: 0.85rem 1.2rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      list-style: none;
+    }
+
+    details.dashboard summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.dashboard summary:hover {
       background: var(--accent);
       color: var(--primary);
+    }
+
+    .dash-desc {
+      padding: 0.6rem 1.5rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      background: #fafafa;
+    }
+
+    .dash-desc a {
+      display: inline-block;
+      margin-top: 0.4rem;
+      color: var(--primary);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .dash-desc a:hover {
+      text-decoration: underline;
     }
 
     main {
@@ -139,10 +165,14 @@
       text-decoration: none;
     }
 
-    footer a:hover { text-decoration: underline; }
+    footer a:hover {
+      text-decoration: underline;
+    }
 
     @media (max-width: 768px) {
-      .container { flex-direction: column; }
+      .container {
+        flex-direction: column;
+      }
       aside {
         width: 100%;
         border-right: none;
@@ -168,22 +198,102 @@
   <aside>
     <nav>
       <ul>
+
         <li class="section">LAND</li>
-        <li><a href="https://www.landcoverstats.gov.ls" target="_blank">🗺️ Land Cover Dashboard</a></li>
-        <li><a href="https://roll-project-ff0bb.web.app/" target="_blank">📍 ROLL Field Dashboard</a></li>
+
+        <details class="dashboard">
+          <summary>🗺️ Land Cover Dashboard</summary>
+          <div class="dash-desc">
+            National land-cover maps, statistics, and trends for land-use and environmental
+            planning, monitoring, and reporting.
+            <br />
+            <a href="https://www.landcoverstats.gov.ls" target="_blank">Open dashboard ↗</a>
+          </div>
+        </details>
+
+        <details class="dashboard">
+          <summary>📍 ROLL Field Dashboard</summary>
+          <div class="dash-desc">
+            Field-based baseline data for Regeneration Of Landscapes And Livelihoods Project.
+            <br />
+            <a href="https://roll-project-ff0bb.web.app/" target="_blank">Open dashboard ↗</a>
+          </div>
+        </details>
 
         <li class="section">SOIL</li>
-        <li><a href="https://www.lesis.gov.ls" target="_blank">🌱 Soil Information System</a></li>
+
+        <details class="dashboard">
+          <summary>🌱 Soil Information System</summary>
+          <div class="dash-desc">
+            Soil property maps, fertility indicators, and decision-support tools
+            for agriculture, conservation, and land evaluation.
+            <br />
+            <a href="https://www.lesis.gov.ls" target="_blank">Open dashboard ↗</a>
+          </div>
+        </details>
 
         <li class="section">BIODIVERSITY</li>
-        <li><a href="https://dashboards.icraf.org/app/lesotho_rangeland_health_dashboard" target="_blank">🌾 Rangeland Health</a></li>
-        <li><a href="https://tsmafantiri.shinyapps.io/LsoAvifaunaApp/" target="_blank">🐦 Lesotho Avifauna</a></li>
-        <li><a href="https://tsmafantiri.shinyapps.io/LSOEnviroApp/" target="_blank">🦌 Species Searcher</a></li>
+
+        <details class="dashboard">
+          <summary>🌾 Rangeland Health</summary>
+          <div class="dash-desc">
+            Assessment of national rangeland condition,species diversity and environmental indicators  .
+            <br />
+            <a href="https://dashboards.icraf.org/app/lesotho_rangeland_health_dashboard" target="_blank">Open dashboard ↗</a>
+          </div>
+        </details>
+
+        <details class="dashboard">
+          <summary>🐦 Lesotho Avifauna</summary>
+          <div class="dash-desc">
+            Interactive exploration of bird species distribution and observation
+            records across Lesotho.
+            <br />
+            <a href="https://tsmafantiri.shinyapps.io/LsoAvifaunaApp/" target="_blank">Open dashboard ↗</a>
+          </div>
+        </details>
+
+        <details class="dashboard">
+          <summary>🦌 Species Searcher</summary>
+          <div class="dash-desc">
+            Biodiversity search and visualization tool for rangeland species data.
+            <br />
+            <a href="https://tsmafantiri.shinyapps.io/LSOEnviroApp/" target="_blank">Open dashboard ↗</a>
+          </div>
+        </details>
 
         <li class="section">CLIMATE & ENVIRONMENT</li>
-        <li><a href="https://nifty-vault-332121.projects.earthengine.app/view/lesotho-emmissions-monitoring-app" target="_blank">🏭 Emissions Monitor</a></li>
-        <li><a href="https://nifty-vault-332121.projects.earthengine.app/view/cmip6-multi-variable-extractor-for-metolong" target="_blank">🌍 CMIP6 Climate Data Extractor</a></li>
-        <li><a href="https://africageoportal.maps.arcgis.com/apps/instant/charts/index.html?appid=b5348bb23f83414ca6cb74533df828c6" target="_blank">🔥 Fire Activity</a></li>
+
+        <details class="dashboard">
+          <summary>🏭 Emissions Monitor</summary>
+          <div class="dash-desc">
+            Spatial monitoring of gas emissions and pollution
+            to support climate mitigation and reporting.
+            <br />
+            <a href="https://nifty-vault-332121.projects.earthengine.app/view/lesotho-emmissions-monitoring-app" target="_blank">Open dashboard ↗</a>
+          </div>
+        </details>
+
+        <details class="dashboard">
+          <summary>🌍 CMIP6 Climate Data Extractor</summary>
+          <div class="dash-desc">
+            Extraction of CMIP6 climate variables for scenario analysis,
+            climate risk assessment, and adaptation planning.
+            <br />
+            <a href="https://nifty-vault-332121.projects.earthengine.app/view/cmip6-multi-variable-extractor-for-metolong" target="_blank">Open dashboard ↗</a>
+          </div>
+        </details>
+
+        <details class="dashboard">
+          <summary>🔥 Fire Activity</summary>
+          <div class="dash-desc">
+            Visualization of fire occurrence, frequency, and temporal trends
+            derived from satellite observations.
+            <br />
+            <a href="https://africageoportal.maps.arcgis.com/apps/instant/charts/index.html?appid=b5348bb23f83414ca6cb74533df828c6" target="_blank">Open dashboard ↗</a>
+          </div>
+        </details>
+
       </ul>
     </nav>
   </aside>
@@ -198,13 +308,13 @@
       </p>
 
       <p>
-        Dashboards are developed by national institutions and partners and
-        open in separate tabs to ensure full performance, stability,
-        and analytical depth.
+        Each dashboard opens in a new tab to ensure full analytical
+        functionality and optimal performance.
       </p>
 
       <div class="hint">
-        👉 Select a dashboard from the menu on the left to open it in a new tab.
+        👉 Expand a dashboard on the left to view its description, then click
+        <strong>Open dashboard</strong>.
       </div>
     </div>
   </main>
@@ -213,7 +323,7 @@
 
 <footer>
   © 2026 Lesotho Geospatial Dashboards | Designed & Built by OCAES
-  <div class="social-media">
+  <div>
     <a href="https://www.facebook.com/Ocaes" target="_blank">Facebook</a>
     <a href="https://x.com/ocaes_lso" target="_blank">X</a>
     <a href="https://heylink.me/tsitsomafantiri/" target="_blank">HeyLink.me</a>

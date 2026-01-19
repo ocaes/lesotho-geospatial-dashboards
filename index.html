@@ -150,24 +150,11 @@
       font-size: 0.9rem;
     }
 
-    /* =====================
-       FEEDBACK SECTION
-       ===================== */
-
+    /* FEEDBACK */
     .feedback {
       margin-top: 2.5rem;
       padding-top: 2rem;
       border-top: 1px solid var(--border);
-    }
-
-    .feedback h2 {
-      font-size: 1.3rem;
-      color: var(--primary);
-      margin-bottom: 0.6rem;
-    }
-
-    .feedback p {
-      max-width: 820px;
     }
 
     .feedback-form {
@@ -195,20 +182,11 @@
       border-radius: 8px;
       border: 1px solid var(--border);
       font-size: 0.9rem;
-      font-family: inherit;
     }
 
     .feedback-form textarea {
       min-height: 120px;
       resize: vertical;
-    }
-
-    .feedback-form input:focus,
-    .feedback-form select:focus,
-    .feedback-form textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 2px rgba(11,94,215,0.1);
     }
 
     .form-row {
@@ -242,30 +220,10 @@
       color: var(--text-muted);
     }
 
-    footer a {
-      margin: 0 0.5rem;
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-
-      aside {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
+      .container { flex-direction: column; }
+      aside { width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
+      .form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -275,156 +233,188 @@
 <header>
   <h1>Lesotho Geospatial Dashboards Portal</h1>
   <p>
-    A centralized access point for national land, soil, biodiversity,
-    and climate information systems supporting evidence-based decision-making
-    in the Kingdom of Lesotho.
+    A centralized access point for national land, soil, biodiversity, and climate
+    information systems supporting evidence-based decision-making in the Kingdom of Lesotho.
   </p>
 </header>
 
 <div class="container">
 
-  <aside>
-    <nav>
-      <ul>
-        <li class="section">LAND</li>
+<aside>
+<nav>
+<ul>
 
-        <details class="dashboard">
-          <summary>🗺️ Land Cover Dashboard</summary>
-          <div class="dash-desc">
-            National land-cover maps, statistics, and trends for planning and monitoring.
-            <br>
-            <a href="https://www.landcoverstats.gov.ls" target="_blank">Open dashboard ↗</a>
-          </div>
-        </details>
+<li class="section">LAND</li>
+<details class="dashboard">
+  <summary>🗺️ Land Cover Dashboard</summary>
+  <div class="dash-desc">
+    National land-cover maps, statistics, and trends.
+    <br><a href="https://www.landcoverstats.gov.ls" target="_blank">Open dashboard ↗</a>
+  </div>
+</details>
 
-        <details class="dashboard">
-          <summary>📍 ROLL Field Dashboard</summary>
-          <div class="dash-desc">
-            Field-based baseline and monitoring data for the ROLL Project.
-            <br>
-            <a href="https://roll-project-ff0bb.web.app/" target="_blank">Open dashboard ↗</a>
-          </div>
-        </details>
+<details class="dashboard">
+  <summary>📍 ROLL Field Dashboard</summary>
+  <div class="dash-desc">
+    Field-based baseline and monitoring data for the ROLL Project.
+    <br><a href="https://roll-project-ff0bb.web.app/" target="_blank">Open dashboard ↗</a>
+  </div>
+</details>
 
-        <li class="section">SOIL</li>
+<li class="section">SOIL</li>
+<details class="dashboard">
+  <summary>🌱 Soil Information System</summary>
+  <div class="dash-desc">
+    Soil property maps and decision-support tools.
+    <br><a href="https://www.lesis.gov.ls" target="_blank">Open dashboard ↗</a>
+  </div>
+</details>
 
-        <details class="dashboard">
-          <summary>🌱 Soil Information System</summary>
-          <div class="dash-desc">
-            Soil property maps and decision-support tools.
-            <br>
-            <a href="https://www.lesis.gov.ls" target="_blank">Open dashboard ↗</a>
-          </div>
-        </details>
+<li class="section">BIODIVERSITY</li>
+<details class="dashboard">
+  <summary>🌾 Rangeland Health</summary>
+  <div class="dash-desc">
+    National rangeland condition and productivity indicators.
+    <br><a href="https://dashboards.icraf.org/app/lesotho_rangeland_health_dashboard" target="_blank">Open dashboard ↗</a>
+  </div>
+</details>
 
-        <li class="section">BIODIVERSITY</li>
+<details class="dashboard">
+  <summary>🐦 Lesotho Avifauna</summary>
+  <div class="dash-desc">
+    Bird species distribution and observation records.
+    <br><a href="https://tsmafantiri.shinyapps.io/LsoAvifaunaApp/" target="_blank">Open dashboard ↗</a>
+  </div>
+</details>
 
-        <details class="dashboard">
-          <summary>🌾 Rangeland Health</summary>
-          <div class="dash-desc">
-            National rangeland condition and productivity indicators.
-            <br>
-            <a href="https://dashboards.icraf.org/app/lesotho_rangeland_health_dashboard" target="_blank">Open dashboard ↗</a>
-          </div>
-        </details>
+<details class="dashboard">
+  <summary>🦌 Species Searcher</summary>
+  <div class="dash-desc">
+    Biodiversity species search and visualization tool.
+    <br><a href="https://tsmafantiri.shinyapps.io/LSOEnviroApp/" target="_blank">Open dashboard ↗</a>
+  </div>
+</details>
 
-        <details class="dashboard">
-          <summary>🐦 Lesotho Avifauna</summary>
-          <div class="dash-desc">
-            Bird species distribution and observation records.
-            <br>
-            <a href="https://tsmafantiri.shinyapps.io/LsoAvifaunaApp/" target="_blank">Open dashboard ↗</a>
-          </div>
-        </details>
+<li class="section">CLIMATE & ENVIRONMENT</li>
+<details class="dashboard">
+  <summary>🏭 Emissions Monitor</summary>
+  <div class="dash-desc">
+    Spatial monitoring of gas emissions and pollution.
+    <br><a href="https://nifty-vault-332121.projects.earthengine.app/view/lesotho-emmissions-monitoring-app" target="_blank">Open dashboard ↗</a>
+  </div>
+</details>
 
-        <li class="section">CLIMATE & ENVIRONMENT</li>
+<details class="dashboard">
+  <summary>🌍 CMIP6 Climate Data Extractor</summary>
+  <div class="dash-desc">
+    Extraction of CMIP6 climate variables for scenario analysis.
+    <br><a href="https://nifty-vault-332121.projects.earthengine.app/view/cmip6-multi-variable-extractor-for-metolong" target="_blank">Open dashboard ↗</a>
+  </div>
+</details>
 
-        <details class="dashboard">
-          <summary>🏭 Emissions Monitor</summary>
-          <div class="dash-desc">
-            Spatial monitoring of gas emissions and pollution.
-            <br>
-            <a href="https://nifty-vault-332121.projects.earthengine.app/view/lesotho-emmissions-monitoring-app" target="_blank">Open dashboard ↗</a>
-          </div>
-        </details>
-      </ul>
-    </nav>
-  </aside>
+<details class="dashboard">
+  <summary>🔥 Fire Activity</summary>
+  <div class="dash-desc">
+    Satellite-derived fire occurrence and temporal trends.
+    <br><a href="https://africageoportal.maps.arcgis.com/apps/instant/charts/index.html?appid=b5348bb23f83414ca6cb74533df828c6" target="_blank">Open dashboard ↗</a>
+  </div>
+</details>
 
-  <main>
-    <div class="card">
+</ul>
+</nav>
+</aside>
 
-      <h2>Welcome</h2>
+<main>
+<div class="card">
 
-      <p>
-        This portal provides unified access to key geospatial dashboards supporting
-        land management, soil assessment, biodiversity monitoring, and climate-related
-        analysis in Lesotho.
-      </p>
+<h2>Welcome</h2>
 
-      <p>
-        Integrated access supports coordinated planning, evidence-based policy
-        formulation, and sustainable landscape management.
-      </p>
+<p>
+This portal provides unified access to key geospatial dashboards that support land
+management, soil assessment, biodiversity monitoring, and climate-related analysis
+in Lesotho. It serves as a centralized gateway to spatial information systems developed
+by national institutions and partners, enabling users to efficiently discover, access,
+and apply geospatial evidence for decision-making.
+</p>
 
-      <div class="hint">
-        👉 Expand a dashboard on the left to view its description, then click
-        <strong>Open dashboard</strong> to access the full system.
-      </div>
+<p>
+The integration of these dashboards is essential for informed and effective planning,
+as land, soil, biodiversity, and climate systems are inherently interconnected.
+Policies, interventions, and management actions in one sector often generate direct
+and indirect impacts across others.
+</p>
 
-      <!-- FEEDBACK -->
-      <section class="feedback">
-        <h2>Feedback & Continuous Improvement</h2>
-        <p>
-          Your feedback supports continuous improvement of this portal and its
-          dashboards. Submissions are reviewed by the administration team.
-        </p>
+<p>
+By strengthening coordination among government ministries, researchers, development
+partners, and implementing agencies, the portal reduces duplication of effort,
+promotes consistency in data interpretation, and enhances the use of shared evidence
+for policy formulation, project planning, monitoring, and reporting.
+</p>
 
-        <form action="https://formspree.io/f/meooporn" method="POST" class="feedback-form">
+<p>
+Rather than replacing individual systems, the portal preserves the full analytical
+depth and functionality of each dashboard while improving their visibility,
+interoperability, and usability.
+</p>
 
-          <div class="form-row">
-            <div>
-              <label>Your Name <span>(optional)</span></label>
-              <input type="text" name="name">
-            </div>
+<div class="hint">
+👉 Expand a dashboard on the left to view its description, then click
+<strong>Open dashboard</strong> to access the full system.
+</div>
 
-            <div>
-              <label>Your Role <span>(optional)</span></label>
-              <select name="role">
-                <option value="">Select role</option>
-                <option>Government / Ministry</option>
-                <option>Researcher / Academic</option>
-                <option>Development Partner</option>
-                <option>NGO / Civil Society</option>
-                <option>Private Sector</option>
-                <option>Other</option>
-              </select>
-            </div>
-          </div>
+<section class="feedback">
+<h2>Feedback & Continuous Improvement</h2>
+<p>
+Your feedback is valuable in strengthening this portal and the dashboards it provides
+access to. All submissions are reviewed by the portal administration team to support
+continuous improvement and better service delivery.
+</p>
 
-          <label>Dashboard Referenced <span>(optional)</span></label>
-          <input type="text" name="dashboard">
+<form class="feedback-form" action="https://formspree.io/f/meooporn" method="POST">
 
-          <label>Your Feedback</label>
-          <textarea name="message" required></textarea>
+<div class="form-row">
+<div>
+<label>Your Name <span>(optional)</span></label>
+<input type="text" name="name" placeholder="Enter your name">
+</div>
 
-          <label>Contact Email <span>(optional)</span></label>
-          <input type="email" name="email">
+<div>
+<label>Your Role <span>(optional)</span></label>
+<select name="role">
+<option value="">Select role</option>
+<option>Government / Ministry</option>
+<option>Researcher / Academic</option>
+<option>Development Partner</option>
+<option>NGO / Civil Society</option>
+<option>Private Sector</option>
+<option>Other</option>
+</select>
+</div>
+</div>
 
-          <input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html">
-          <input type="text" name="_gotcha" style="display:none">
+<label>Dashboard Referenced <span>(optional)</span></label>
+<input type="text" name="dashboard" placeholder="e.g. Land Cover Dashboard">
 
-          <button type="submit">Send Feedback</button>
-        </form>
-      </section>
+<label>Your Feedback or Suggestion</label>
+<textarea name="message" placeholder="Describe issues, suggestions, data gaps, or additional needs..." required></textarea>
 
-    </div>
-  </main>
+<label>Contact Email <span>(optional)</span></label>
+<input type="email" name="email" placeholder="you@example.com">
+
+<input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html">
+<input type="text" name="_gotcha" style="display:none">
+
+<button type="submit">Send Feedback</button>
+</form>
+</section>
+
+</div>
+</main>
 
 </div>
 
 <footer>
-  © 2026 Lesotho Geospatial Dashboards | Designed & Built by OCAES
+© 2026 Lesotho Geospatial Dashboards | Designed & Built by OCAES
 </footer>
 
 </body>

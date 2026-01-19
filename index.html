@@ -347,6 +347,68 @@
   </main>
 
 </div>
+  <div class="card">
+  <h2>Feedback & Continuous Improvement</h2>
+
+  <p>
+    Your feedback helps improve this portal and its dashboards.
+    All submissions are sent directly to the portal administration team
+    to support continual improvement and better service delivery.
+  </p>
+
+  <form action="https://formspree.io/f/meooporn" method="POST">
+
+    <label for="name">Your Name (optional)</label>
+    <input type="text" id="name" name="name" placeholder="Your name">
+
+    <label for="role">Your Role (optional)</label>
+    <select id="role" name="role">
+      <option value="">Select role</option>
+      <option>Government / Ministry</option>
+      <option>Researcher / Academic</option>
+      <option>Development Partner</option>
+      <option>NGO / Civil Society</option>
+      <option>Private Sector</option>
+      <option>Other</option>
+    </select>
+
+    <label for="dashboard">Dashboard Referenced (optional)</label>
+    <input
+      type="text"
+      id="dashboard"
+      name="dashboard"
+      placeholder="e.g. Land Cover Dashboard"
+    >
+
+    <label for="message">Your Feedback or Suggestion</label>
+    <textarea
+      id="message"
+      name="message"
+      placeholder="Describe issues, suggestions, data gaps, or additional needs..."
+      required
+    ></textarea>
+
+    <label for="email">Contact Email (optional)</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="you@example.com"
+    >
+
+    <!-- Redirect after submission -->
+    <input
+      type="hidden"
+      name="_redirect"
+      value="https://yourwebsite.com/thank-you.html"
+    >
+
+    <!-- Honeypot spam protection -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <button type="submit">Send Feedback</button>
+  </form>
+</div>
 
 <footer>
   © 2026 Lesotho Geospatial Dashboards | Designed & Built by OCAES

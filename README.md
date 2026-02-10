@@ -6,6 +6,10 @@ The **Lesotho Geospatial Dashboards Portal** is a centralized web-based access p
 
 The portal brings together independently developed dashboards into a single, intuitive interface, enabling policymakers, researchers, practitioners, and the public to easily access authoritative spatial intelligence.
 
+## Features 
+
+The portal features an interactive, event-driven interface that updates dynamically in response to user inputs without page reloads. Users can navigate via scroll-based controls, filter and query dashboards in real time, and interact with category selectors to modify displayed geospatial content instantaneously. The system provides immediate visual feedback and maintains responsive performance across devices. An asynchronous feedback module supports form submission with confirmation, enhancing user engagement and system interactivity.
+
 🌍 **Live Portal:**  
 https://ocaes.github.io/lesotho-geospatial-dashboards/
 

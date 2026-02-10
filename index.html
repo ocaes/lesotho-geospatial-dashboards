@@ -958,66 +958,68 @@
 
     <!-- form body (hidden once submitted) -->
     <div class="form-body" id="formBody">
-      <div class="form-row">
-        <div class="field">
-          <label>Name <span style="color:var(--text-muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
-          <input type="text" id="fbName" placeholder="Your name" />
+      <form class="feedback-form" action="https://formspree.io/f/meooporn" method="POST">
+        <div class="form-row">
+          <div class="field">
+            <label>Name <span style="color:var(--text-muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+            <input type="text" name="name" id="fbName" placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label>Role <span style="color:var(--text-muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+            <select name="role" id="fbRole">
+              <option value="" disabled selected>Select role</option>
+              <option>Government / Ministry</option>
+              <option>Researcher / Academic</option>
+              <option>Development Partner</option>
+              <option>NGO / Civil Society</option>
+              <option>Private Sector</option>
+              <option>Other</option>
+            </select>
+          </div>
         </div>
-        <div class="field">
-          <label>Role <span style="color:var(--text-muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
-          <select id="fbRole">
-            <option value="" disabled selected>Select role</option>
-            <option>Government / Ministry</option>
-            <option>Researcher / Academic</option>
-            <option>Development Partner</option>
-            <option>NGO / Civil Society</option>
-            <option>Private Sector</option>
-            <option>Other</option>
-          </select>
-        </div>
-      </div>
 
-      <div class="form-row full" style="margin-top:12px">
-        <div class="field">
-          <label>Dashboard Referenced <span style="color:var(--text-muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
-          <select id="fbDashboard">
-            <option value="" disabled selected>Select a dashboard</option>
-            <option>Land Cover Dashboard</option>
-            <option>ROLL Field Dashboard</option>
-            <option>Soil Information System</option>
-            <option>Rangeland Health</option>
-            <option>Lesotho Avifauna</option>
-            <option>Species Searcher</option>
-            <option>Emissions Monitor</option>
-            <option>CMIP6 Climate Data Extractor</option>
-            <option>Fire Activity</option>
-            <option>General / Portal</option>
-          </select>
+        <div class="form-row full" style="margin-top:12px">
+          <div class="field">
+            <label>Dashboard Referenced <span style="color:var(--text-muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+            <select name="dashboard" id="fbDashboard">
+              <option value="" disabled selected>Select a dashboard</option>
+              <option>Land Cover Dashboard</option>
+              <option>ROLL Field Dashboard</option>
+              <option>Soil Information System</option>
+              <option>Rangeland Health</option>
+              <option>Lesotho Avifauna</option>
+              <option>Species Searcher</option>
+              <option>Emissions Monitor</option>
+              <option>CMIP6 Climate Data Extractor</option>
+              <option>Fire Activity</option>
+              <option>General / Portal</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <div class="form-row full" style="margin-top:12px">
-        <div class="field">
-          <label>Feedback or Suggestion</label>
-          <textarea id="fbMessage" placeholder="Share your thoughts, suggestions, or report an issue…"></textarea>
+        <div class="form-row full" style="margin-top:12px">
+          <div class="field">
+            <label>Feedback or Suggestion</label>
+            <textarea name="message" id="fbMessage" placeholder="Share your thoughts, suggestions, or report an issue…" required></textarea>
+          </div>
         </div>
-      </div>
 
-      <div class="form-row full" style="margin-top:12px">
-        <div class="field">
-          <label>Contact Email <span style="color:var(--text-muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
-          <input type="email" id="fbEmail" placeholder="you@example.com" />
+        <div class="form-row full" style="margin-top:12px">
+          <div class="field">
+            <label>Contact Email <span style="color:var(--text-muted);font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+            <input type="email" name="email" id="fbEmail" placeholder="you@example.com" />
+          </div>
         </div>
-      </div>
 
-      <div class="submit-row">
-        <button class="submit-btn" id="sendBtn">
-          Send Feedback
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/>
-          </svg>
-        </button>
-      </div>
+        <div class="submit-row">
+          <button type="submit" class="submit-btn">
+            Send Feedback
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/>
+            </svg>
+          </button>
+        </div>
+      </form>
     </div>
 
     <!-- success confirmation (shown after submit) -->
@@ -1185,22 +1187,42 @@
   searchInput.addEventListener('input', onSearch);
   mobileSearchInput.addEventListener('input', onMobileSearch);
 
-  /* ─────────────────── FEEDBACK FORM ─────────── */
-  const sendBtn      = document.getElementById('sendBtn');
-  const resetBtn     = document.getElementById('resetBtn');
+  /* ─────────────────── FEEDBACK FORM (FORMSPREE) ─────────── */
+  const feedbackForm = document.querySelector('.feedback-form');
   const formBody     = document.getElementById('formBody');
   const successState = document.getElementById('successState');
+  const resetBtn     = document.getElementById('resetBtn');
 
-  sendBtn.addEventListener('click', () => {
-    formBody.classList.add('hidden');
-    successState.classList.add('show');
+  feedbackForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(feedbackForm);
+    
+    try {
+      const response = await fetch(feedbackForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        formBody.classList.add('hidden');
+        successState.classList.add('show');
+        feedbackForm.reset();
+      } else {
+        alert('There was a problem submitting your feedback. Please try again.');
+      }
+    } catch (error) {
+      alert('There was a problem submitting your feedback. Please try again.');
+    }
   });
+
   resetBtn.addEventListener('click', () => {
-    ['fbName','fbRole','fbDashboard','fbMessage','fbEmail'].forEach(id => {
-      document.getElementById(id).value = '';
-    });
     successState.classList.remove('show');
     formBody.classList.remove('hidden');
+    feedbackForm.reset();
   });
 
 })();
